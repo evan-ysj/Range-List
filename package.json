@@ -1,0 +1,12 @@
+{
+  "name": "rangelist",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/run"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  }
+}
