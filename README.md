@@ -1,6 +1,6 @@
 # Range List
 
-Range list is an aggregate of ranges with different sizes, where a range is defined as a pair of integers that represent its two boundaries. One can add or remove a range at a time, and print all the tracked ranges in the list. 
+Range list is an aggregate of ranges with different sizes, where a range is defined as a pair of integers that represent its two boundaries. One can add or remove a range at a time, and print all the tracked ranges in the list. ([Repo](https://github.com/evan-ysj/Range-List/tree/master))
 
 ## Core files
 
@@ -8,7 +8,7 @@ The main class is defined in ```./models/RangeList.js``` and the test file is ``
 
 ## Install
 
-This project uses node and npm. Go check them out if you don't have them locally installed.
+This project uses [node](https://nodejs.org/en/download/) and [npm](https://nodejs.org/en/download/). Go check them out if you don't have them locally installed.
 ```bash
 npm install
 ```
