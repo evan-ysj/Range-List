@@ -4,7 +4,7 @@
  * @Description: This file defines the structure and API of a range list.
  * @Author: Sujia Yin
  * @Date: 2020-06-12 18:18:56
- * @Version: 1.0
+ * @Version: V1.0
  */ 
 
 
@@ -92,7 +92,7 @@ RangeList.prototype.add = function(range) {
             newRange.push(...this.rangeList.slice(i));
         }
     } catch(e) {
-        console.log(e);
+        console.log("Error: Cannot add range: ", e);
         return false;
     }
 
@@ -152,7 +152,7 @@ RangeList.prototype.remove = function(range) {
             newRange.push(...this.rangeList.slice(i));
         }
     } catch(e) {
-        console.log(e);
+        console.log("Error: Cannot remove range: ", e);
         return false;
     }
 
