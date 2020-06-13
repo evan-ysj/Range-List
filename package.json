@@ -1,7 +1,10 @@
 {
   "name": "rangelist",
   "version": "1.0.0",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evan-ysj/Range-List"
+  },
   "scripts": {
     "start": "node ./bin/run"
   },
