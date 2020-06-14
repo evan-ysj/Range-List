@@ -10,8 +10,8 @@ The main class is defined in ```./src/models/RangeList.js```.
 
 This project uses [node](https://nodejs.org/en/download/) and [npm](https://nodejs.org/en/download/). Go check them out if you don't have them locally installed.
 ```bash
-npm run build
 npm install
+npm run build
 ```
 
 ## Usage
