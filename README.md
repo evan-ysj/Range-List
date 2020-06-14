@@ -28,6 +28,10 @@ The unit test file is under ```./test``` directory. You can run the test by foll
 mocha
 ```
 
+## To Do
+
+Setup a http server to accept input range from client, and display range list on browser.
+
 ## Contributing
 
 PRs accepted.
