@@ -175,6 +175,16 @@ RangeList.prototype.print = function() {
 }
 
 /**
+ * @description: Clear the range list.
+ * @param {} 
+ * @return: None
+ * @author: Sujia Yin
+ */
+RangeList.prototype.clear = function() {
+    this.rangeList = [];
+}
+
+/**
  * @description: Check whether the input range is valid.
  * @param {Array<Number>} range - Array of two integers that specify beginning and end of range.
  * @return {Boolean}
@@ -182,6 +192,7 @@ RangeList.prototype.print = function() {
  */
 function checkInput(range) {
     if(range.length != 2 || range[0] > range[1]) {
+        console.log("Input range is invalid!");
         return false;
     }
     return true;
