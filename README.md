@@ -4,12 +4,13 @@ Range list is an aggregate of ranges with different sizes, where a range is defi
 
 ## Core files
 
-The main class is defined in ```./models/RangeList.js``` and the test file is ```./test/RangeList.test.js```. 
+The main class is defined in ```./src/models/RangeList.js```. 
 
 ## Install
 
 This project uses [node](https://nodejs.org/en/download/) and [npm](https://nodejs.org/en/download/). Go check them out if you don't have them locally installed.
 ```bash
+npm run build
 npm install
 ```
 

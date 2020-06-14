@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var rl = require("../app");
+var rl = require("../dist/app.js");
 
  rl.add([1, 5], (err) => {
      if(err) {

@@ -7,7 +7,8 @@
  * @Version: 1.0
  */ 
 
-var RangeList = require("./models/RangeList.js");
+//var RangeList = require("./models/RangeList.js");
+import RangeList from "./models/RangeList.js"
 
 const app = new RangeList();
 
