@@ -38,7 +38,7 @@ describe("Input format test:", function() {
     });
  });
 
- describe("Correctness test:", function() {
+describe("Correctness test:", function() {
     it("Add and remove non-overlap intervals", function() {
         app.add([1, 4]);
         app.add([8, 12]);
@@ -79,19 +79,61 @@ describe("Input format test:", function() {
     });
  });
 
- describe("Massive inputs test:", function() {
+describe("Massive inputs test:", function() {
     it("Adding method should not throw exception under massive inputs", function() {
         let result = true;
-        for(let i = -1000000; i < 1000000; ++i) {
+        for(let i = -1000000; i <= 1000000; ++i) {
             result &= app.add([i, i + 3]);
+        }
+        expect(result).to.be.ok;
+        expect(app.rangeList[0].left).to.be.equal(-1000000);
+        expect(app.rangeList[0].right).to.be.equal(1000003);
+    });
+    it("Removing method should not throw exception under massive inputs", function() {
+        let result = true;
+        for(let i = 1000000; i >= -1000000; --i) {
+            result &= app.remove([i - 5, i]);
+        }
+        expect(result).to.be.ok;
+        expect(app.rangeList[0].left).to.be.equal(1000000);
+        expect(app.rangeList[0].right).to.be.equal(1000003);
+        app.clear();
+    });
+    it("Adding massive disjoint intervals should be OK", function() {
+        let result = true;
+        for(let i = -1000000; i >= 1000000; i += 5) {
+            result &= app.remove([i, i + 3]);
+        }
+        expect(result).to.be.ok;
+    });
+    it("Removing massive disjoint intervals should be OK", function() {
+        let result = true;
+        for(let i = -1000000; i >= 1000000; i += 5) {
+            result &= app.remove([i + 1, i + 4]);
         }
         expect(result).to.be.ok;
         app.clear();
     });
-    it("Adding method should not throw exception under massive inputs", function() {
+});
+
+describe("Random input test:", function() {
+    it("Adding method should not throw exception with random inputs", function() {
         let result = true;
-        for(let i = 1000000; i > -1000000; --i) {
-            result &= app.remove([i - 5, i]);
+        let left = 0, right = 0;
+        for(let i = 0; i <= 100000; ++i) {
+            left = Math.round(Math.random() * 10000);
+            while(right < left) right = Math.round(Math.random() * 10000);
+            result &= app.add([left, right]);
+        }
+        expect(result).to.be.ok;
+    });
+    it("Adding method should not throw exception with random inputs", function() {
+        let result = true;
+        let left = 0, right = 0;
+        for(let i = 0; i <= 100000; ++i) {
+            left = Math.round(Math.random() * 10000);
+            while(right < left) right = Math.round(Math.random() * 10000);
+            result &= app.remove([left, right]);
         }
         expect(result).to.be.ok;
         app.clear();
